@@ -13,6 +13,9 @@ IT_TERMS_FILE = "it_terms.txt"   # File chứa từ cần giữ nguyên (nên đ
 OVERWRITE_ORIGINAL = True         # True: ghi đè file gốc / False: tạo file mới
 # ==========================
 
+# Các folder con để loại trừ khi quét (để lưu file tạm, backup, file dịch)
+EXCLUDED_DIRS = {"temp_translated", "backup", "translated"}
+
 def load_it_terms():
     """Đọc từ khóa cần giữ nguyên từ file IT_TERMS_FILE với encoding UTF-8"""
     try:
@@ -61,8 +64,8 @@ def translate_subtitle_file(input_path, output_path, it_terms):
 
 def batch_translate(input_folder):
     """
-    Dịch hàng loạt file phụ đề (.srt) trong folder theo cơ chế transaction và kiểm tra checksum.
-    Các file backup, file tạm và file lưu checksum sẽ được tạo trong folder đã chọn.
+    Dịch hàng loạt file phụ đề (.srt) trong folder (bao gồm các folder con) theo cơ chế transaction và kiểm tra checksum.
+    Các file backup, file tạm và file lưu checksum sẽ được tạo trong folder gốc theo cấu trúc thư mục tương đối.
     """
     # Kiểm tra quyền ghi vào folder đầu vào
     if not os.access(input_folder, os.W_OK):
@@ -71,7 +74,7 @@ def batch_translate(input_folder):
 
     it_terms = load_it_terms()
 
-    # Xác định các folder con dùng để lưu file tạm và backup trong folder đã chọn
+    # Xác định các folder con dùng để lưu file tạm, backup, dịch
     temp_folder = os.path.join(input_folder, "temp_translated")
     backup_folder = os.path.join(input_folder, "backup")
     dest_folder = os.path.join(input_folder, "translated")  # Dùng nếu OVERWRITE_ORIGINAL == False
@@ -81,21 +84,26 @@ def batch_translate(input_folder):
     else:
         os.makedirs(dest_folder, exist_ok=True)
 
-    # File lưu checksum được đặt trong folder đã chọn
+    # File lưu checksum được đặt trong folder gốc
     checksum_file = os.path.join(input_folder, "translated_files.json")
     translated_checksums = load_translated_checksums(checksum_file)
 
-    # Duyệt các file .srt trong folder đã chọn
     files_to_process = []
-    for filename in os.listdir(input_folder):
-        if filename.lower().endswith(".srt"):
-            file_path = os.path.join(input_folder, filename)
-            current_checksum = compute_checksum(file_path)
-            # Nếu file đã được dịch (với checksum khớp) thì bỏ qua
-            if filename in translated_checksums and translated_checksums[filename] == current_checksum:
-                print(f"Bỏ qua {filename} vì đã được dịch.")
-                continue
-            files_to_process.append((filename, file_path))
+    # Quét đệ quy qua folder gốc và các folder con (bỏ qua các folder đã loại trừ)
+    for root, dirs, files in os.walk(input_folder):
+        # Loại bỏ các folder con chứa file tạm, backup, dịch
+        dirs[:] = [d for d in dirs if d not in EXCLUDED_DIRS]
+        for filename in files:
+            if filename.lower().endswith(".srt"):
+                full_path = os.path.join(root, filename)
+                # Lấy đường dẫn tương đối so với input_folder để làm key
+                rel_path = os.path.relpath(full_path, input_folder)
+                current_checksum = compute_checksum(full_path)
+                # Nếu file đã được dịch (với checksum khớp) thì bỏ qua
+                if rel_path in translated_checksums and translated_checksums[rel_path] == current_checksum:
+                    print(f"Bỏ qua {rel_path} vì đã được dịch.")
+                    continue
+                files_to_process.append((rel_path, full_path))
     
     if not files_to_process:
         print("Không có file nào cần dịch.")
@@ -104,33 +112,38 @@ def batch_translate(input_folder):
     all_success = True
 
     try:
-        # Dịch từng file và lưu kết quả vào folder tạm
-        for filename, input_path in files_to_process:
-            temp_output_path = os.path.join(temp_folder, filename)
-            print(f"Dịch file {filename}...")
-            translate_subtitle_file(input_path, temp_output_path, it_terms)
+        # Dịch từng file và lưu kết quả vào folder tạm, giữ nguyên cấu trúc thư mục
+        for rel_path, full_path in files_to_process:
+            temp_output_path = os.path.join(temp_folder, rel_path)
+            os.makedirs(os.path.dirname(temp_output_path), exist_ok=True)
+            print(f"Dịch file {rel_path}...")
+            translate_subtitle_file(full_path, temp_output_path, it_terms)
     except Exception as e:
         print("Có lỗi xảy ra trong quá trình dịch:", e)
         all_success = False
 
     if all_success:
-        # Nếu dịch thành công, tiến hành commit thay đổi
-        for filename, input_path in files_to_process:
-            temp_output_path = os.path.join(temp_folder, filename)
+        # Nếu dịch thành công, tiến hành commit thay đổi cho từng file
+        for rel_path, full_path in files_to_process:
+            temp_output_path = os.path.join(temp_folder, rel_path)
             if OVERWRITE_ORIGINAL:
-                # Backup file gốc vào folder backup
-                backup_path = os.path.join(backup_folder, filename + ".bak")
-                shutil.copy2(input_path, backup_path)
-                shutil.move(temp_output_path, input_path)
-                print(f"Ghi đè file {filename} thành công. Backup được lưu tại {backup_path}.")
+                # Tạo folder backup tương ứng và backup file gốc
+                backup_path = os.path.join(backup_folder, rel_path + ".bak")
+                os.makedirs(os.path.dirname(backup_path), exist_ok=True)
+                shutil.copy2(full_path, backup_path)
+                shutil.move(temp_output_path, full_path)
+                print(f"Ghi đè file {rel_path} thành công. Backup được lưu tại {backup_path}.")
             else:
-                shutil.move(temp_output_path, os.path.join(dest_folder, filename))
-                print(f"Đã lưu file dịch {filename} vào folder {dest_folder}.")
+                # Duy trì cấu trúc thư mục trong folder dịch
+                dest_output_path = os.path.join(dest_folder, rel_path)
+                os.makedirs(os.path.dirname(dest_output_path), exist_ok=True)
+                shutil.move(temp_output_path, dest_output_path)
+                print(f"Đã lưu file dịch {rel_path} vào folder {dest_folder}.")
 
-            # Cập nhật checksum của file đã dịch (sau khi ghi đè hay lưu file dịch)
-            final_path = input_path if OVERWRITE_ORIGINAL else os.path.join(dest_folder, filename)
+            # Cập nhật checksum của file đã dịch
+            final_path = full_path if OVERWRITE_ORIGINAL else os.path.join(dest_folder, rel_path)
             new_checksum = compute_checksum(final_path)
-            translated_checksums[filename] = new_checksum
+            translated_checksums[rel_path] = new_checksum
 
         # Lưu lại thông tin checksum
         save_translated_checksums(translated_checksums, checksum_file)
@@ -138,8 +151,8 @@ def batch_translate(input_folder):
     else:
         print("Quá trình dịch gặp lỗi. Không ghi đè file gốc.")
         # Xoá các file tạm nếu cần
-        for filename, _ in files_to_process:
-            temp_output_path = os.path.join(temp_folder, filename)
+        for rel_path, _ in files_to_process:
+            temp_output_path = os.path.join(temp_folder, rel_path)
             if os.path.exists(temp_output_path):
                 os.remove(temp_output_path)
 
@@ -162,7 +175,6 @@ def main():
     if args.folder:
         input_folder = args.folder
     else:
-        # Ưu tiên dùng Zenity nếu có, nếu không có sẽ báo lỗi và thoát
         input_folder = select_folder_zenity()
         if not input_folder:
             print("Không chọn được folder qua Zenity. Bạn hãy chỉ định folder qua tham số --folder hoặc kiểm tra cài đặt Zenity.")
