@@ -20,7 +20,7 @@ def load_it_terms():
     """Đọc từ khóa cần giữ nguyên từ file IT_TERMS_FILE với encoding UTF-8"""
     try:
         with open(IT_TERMS_FILE, "r", encoding="utf-8") as f:
-            return [line.strip() for line in f if line.strip()]
+            return [line.strip() if " " not in line.strip() else '"{}"'.format(line.strip()) for line in f if line.strip()]
     except FileNotFoundError:
         return ["server", "API", "cloud"]  # Danh sách mặc định nếu không có file
 
