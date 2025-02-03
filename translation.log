@@ -1,0 +1,110 @@
+2025-02-02 22:53:46,219 - INFO - Folder được chọn: /home/hao/Desktop/test koko
+2025-02-02 22:53:46,219 - INFO - Đã tải 507 từ khóa IT
+2025-02-02 22:53:46,220 - INFO - Tìm thấy 13 file cần dịch
+2025-02-02 22:54:00,637 - INFO - Đã dịch xong file 01 - Get Started Here!/001 How to Get Help_en.srt
+2025-02-02 22:54:56,280 - INFO - Đã dịch xong file 02 - The Basics of Nest/005 File Naming Conventions_en.srt
+2025-02-02 22:55:04,811 - INFO - Đã dịch xong file 03 - Generating Projects with the Nest CLI/001 App Setup_en.srt
+2025-02-02 22:55:10,500 - INFO - Đã dịch xong file 03 - Generating Projects with the Nest CLI/005 [Optional] Postman Setup_en.srt
+2025-02-02 22:55:27,810 - INFO - Đã dịch xong file 02 - The Basics of Nest/003 Creating a Controller_en.srt
+2025-02-02 22:56:05,986 - INFO - Đã dịch xong file 03 - Generating Projects with the Nest CLI/004 Adding Routing Logic_en.srt
+2025-02-02 22:56:10,477 - INFO - Đã dịch xong file 03 - Generating Projects with the Nest CLI/002 Using the Nest CLI to Generate Files_en.srt
+2025-02-02 22:56:19,527 - INFO - Đã dịch xong file 02 - The Basics of Nest/002 TypeScript Configuration_en.srt
+2025-02-02 22:56:49,420 - INFO - Đã dịch xong file 03 - Generating Projects with the Nest CLI/003 More on Generating Files_en.srt
+2025-02-02 22:56:57,623 - INFO - Đã dịch xong file 02 - The Basics of Nest/006 Routing Decorators_en.srt
+2025-02-02 22:57:20,556 - INFO - Đã dịch xong file 03 - Generating Projects with the Nest CLI/006 [Optional] VSCode REST Client Extension_en.srt
+2025-02-02 22:58:26,956 - INFO - Đã dịch xong file 02 - The Basics of Nest/001 Project Setup_en.srt
+2025-02-02 22:58:30,606 - INFO - Đã dịch xong file 02 - The Basics of Nest/004 Starting Up a Nest App_en.srt
+2025-02-02 22:58:30,623 - INFO - Đã ghi đè file 01 - Get Started Here!/001 How to Get Help_en.srt
+2025-02-02 22:58:30,623 - INFO - Đã ghi đè file 03 - Generating Projects with the Nest CLI/005 [Optional] Postman Setup_en.srt
+2025-02-02 22:58:30,623 - INFO - Đã ghi đè file 03 - Generating Projects with the Nest CLI/002 Using the Nest CLI to Generate Files_en.srt
+2025-02-02 22:58:30,624 - INFO - Đã ghi đè file 03 - Generating Projects with the Nest CLI/003 More on Generating Files_en.srt
+2025-02-02 22:58:30,624 - INFO - Đã ghi đè file 03 - Generating Projects with the Nest CLI/001 App Setup_en.srt
+2025-02-02 22:58:30,624 - INFO - Đã ghi đè file 03 - Generating Projects with the Nest CLI/004 Adding Routing Logic_en.srt
+2025-02-02 22:58:30,624 - INFO - Đã ghi đè file 03 - Generating Projects with the Nest CLI/006 [Optional] VSCode REST Client Extension_en.srt
+2025-02-02 22:58:30,625 - INFO - Đã ghi đè file 02 - The Basics of Nest/001 Project Setup_en.srt
+2025-02-02 22:58:30,625 - INFO - Đã ghi đè file 02 - The Basics of Nest/005 File Naming Conventions_en.srt
+2025-02-02 22:58:30,625 - INFO - Đã ghi đè file 02 - The Basics of Nest/002 TypeScript Configuration_en.srt
+2025-02-02 22:58:30,625 - INFO - Đã ghi đè file 02 - The Basics of Nest/006 Routing Decorators_en.srt
+2025-02-02 22:58:30,625 - INFO - Đã ghi đè file 02 - The Basics of Nest/004 Starting Up a Nest App_en.srt
+2025-02-02 22:58:30,626 - INFO - Đã ghi đè file 02 - The Basics of Nest/003 Creating a Controller_en.srt
+2025-02-02 22:58:30,626 - INFO - Hoàn thành quá trình dịch
+2025-02-03 08:03:48,497 - INFO - Folder được chọn: /home/hao/Desktop/test project/01 - Introduction
+2025-02-03 08:03:48,498 - INFO - Đã tải 507 từ khóa IT
+2025-02-03 08:03:48,499 - INFO - Tìm thấy 5 file cần dịch
+2025-02-03 08:04:05,568 - INFO - Đã dịch xong file 001 Introduction_en.srt
+2025-02-03 08:04:31,967 - INFO - Đã dịch xong file 002 Course Outline_en.srt
+2025-02-03 08:04:41,988 - INFO - Đã dịch xong file 003 Course Prerequisites_en.srt
+2025-02-03 08:41:13,703 - ERROR - Không chọn được folder. Hãy chỉ định folder qua tham số --folder
+2025-02-03 08:42:04,579 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 08:42:04,587 - INFO - Tìm thấy 15 file cần dịch
+2025-02-03 08:42:04,609 - ERROR - Lỗi trong quá trình dịch: cannot pickle '_tkinter.tkapp' object
+2025-02-03 08:42:04,610 - WARNING - Quá trình dịch bị hủy hoặc có lỗi
+2025-02-03 09:05:53,667 - ERROR - Không chọn được folder. Hãy chỉ định folder qua tham số --folder
+2025-02-03 09:06:23,794 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 09:06:23,795 - INFO - Tìm thấy 15 file cần dịch
+2025-02-03 09:06:23,831 - ERROR - Lỗi trong quá trình dịch: cannot pickle '_tkinter.tkapp' object
+2025-02-03 09:06:23,831 - WARNING - Quá trình dịch bị hủy hoặc có lỗi
+2025-02-03 10:13:40,571 - INFO - Folder được chọn: /home/hao/Desktop/test project/01 - Introduction (another copy)
+2025-02-03 10:13:40,572 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 10:13:40,572 - INFO - Tìm thấy 5 file cần dịch
+2025-02-03 10:13:40,573 - ERROR - Lỗi chính: translate_batch() takes from 3 to 5 positional arguments but 6 were given
+2025-02-03 10:13:40,573 - ERROR - Lỗi: translate_batch() takes from 3 to 5 positional arguments but 6 were given
+2025-02-03 10:15:52,194 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 10:15:52,195 - INFO - Tìm thấy 20 file cần dịch
+2025-02-03 10:15:52,196 - ERROR - Lỗi chính: translate_batch() takes from 3 to 5 positional arguments but 6 were given
+2025-02-03 10:21:11,025 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 10:21:11,026 - INFO - Tìm thấy 20 file cần dịch
+2025-02-03 10:21:30,668 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/001 Introduction_en.srt
+2025-02-03 10:22:00,785 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/002 Course Outline_en.srt
+2025-02-03 10:22:03,019 - INFO - Đã dịch xong file 01 - Introduction (copy)/002 Course Outline_en.srt
+2025-02-03 10:22:03,039 - INFO - Đã dịch xong file 01 - Introduction (copy)/004 System Architecture_en.srt
+2025-02-03 10:22:11,020 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/003 Course Prerequisites_en.srt
+2025-02-03 10:22:11,027 - INFO - Đã dịch xong file 01 - Introduction (copy)/003 Course Prerequisites_en.srt
+2025-02-03 10:22:13,738 - INFO - Đã dịch xong file 01 - Introduction (copy)/001 Introduction_en.srt
+2025-02-03 10:22:24,633 - INFO - Đã dịch xong file 01 - Introduction (another copy)/007 Project Setup_en.srt
+2025-02-03 10:22:34,324 - INFO - Đã dịch xong file 01 - Introduction (another copy)/002 Course Outline_en.srt
+2025-02-03 10:22:39,745 - INFO - Đã dịch xong file 01 - Introduction (another copy)/003 Course Prerequisites_en.srt
+2025-02-03 10:22:42,359 - INFO - Đã dịch xong file 01 - Introduction/003 Course Prerequisites_en.srt
+2025-02-03 10:22:49,658 - INFO - Đã dịch xong file 01 - Introduction (another copy)/004 System Architecture_en.srt
+2025-02-03 10:22:50,989 - INFO - Đã dịch xong file 01 - Introduction (copy)/007 Project Setup_en.srt
+2025-02-03 10:22:52,364 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/007 Project Setup_en.srt
+2025-02-03 10:22:58,831 - INFO - Đã dịch xong file 01 - Introduction (another copy)/001 Introduction_en.srt
+2025-02-03 10:23:03,782 - INFO - Đã dịch xong file 01 - Introduction/007 Project Setup_en.srt
+2025-02-03 10:23:13,538 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/004 System Architecture_en.srt
+2025-02-03 10:23:14,385 - INFO - Đã dịch xong file 01 - Introduction/002 Course Outline_en.srt
+2025-02-03 10:23:19,738 - INFO - Đã dịch xong file 01 - Introduction/004 System Architecture_en.srt
+2025-02-03 10:23:24,365 - INFO - Đã dịch xong file 01 - Introduction/001 Introduction_en.srt
+2025-02-03 10:23:24,366 - ERROR - Lỗi chính: cannot access local variable 'temp_output_path' where it is not associated with a value
+2025-02-03 10:32:38,400 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 10:32:38,401 - INFO - Tìm thấy 20 file cần dịch
+2025-02-03 10:32:54,676 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/001 Introduction_en.srt
+2025-02-03 10:33:14,772 - INFO - Đã dịch xong file 01 - Introduction (copy)/004 System Architecture_en.srt
+2025-02-03 10:33:17,775 - INFO - Đã dịch xong file 01 - Introduction (copy)/002 Course Outline_en.srt
+2025-02-03 10:33:17,941 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/002 Course Outline_en.srt
+2025-02-03 10:33:19,969 - INFO - Đã dịch xong file 01 - Introduction (copy)/001 Introduction_en.srt
+2025-02-03 10:33:26,125 - INFO - Đã dịch xong file 01 - Introduction (copy)/003 Course Prerequisites_en.srt
+2025-02-03 10:33:26,811 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/003 Course Prerequisites_en.srt
+2025-02-03 10:33:32,263 - INFO - Đã dịch xong file 01 - Introduction (another copy)/002 Course Outline_en.srt
+2025-02-03 10:33:34,736 - INFO - Đã dịch xong file 01 - Introduction (another copy)/003 Course Prerequisites_en.srt
+2025-02-03 10:33:37,456 - INFO - Đã dịch xong file 01 - Introduction/003 Course Prerequisites_en.srt
+2025-02-03 10:33:41,233 - INFO - Đã dịch xong file 01 - Introduction (another copy)/007 Project Setup_en.srt
+2025-02-03 10:33:44,365 - INFO - Đã dịch xong file 01 - Introduction (copy)/007 Project Setup_en.srt
+2025-02-03 10:33:44,587 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/007 Project Setup_en.srt
+2025-02-03 10:33:53,054 - INFO - Đã dịch xong file 01 - Introduction (another copy)/004 System Architecture_en.srt
+2025-02-03 10:33:55,150 - INFO - Đã dịch xong file 01 - Introduction/007 Project Setup_en.srt
+2025-02-03 10:33:56,186 - INFO - Đã dịch xong file 01 - Introduction (3rd copy)/004 System Architecture_en.srt
+2025-02-03 10:33:57,859 - INFO - Đã dịch xong file 01 - Introduction (another copy)/001 Introduction_en.srt
+2025-02-03 10:34:06,913 - INFO - Đã dịch xong file 01 - Introduction/004 System Architecture_en.srt
+2025-02-03 10:34:09,466 - INFO - Đã dịch xong file 01 - Introduction/002 Course Outline_en.srt
+2025-02-03 10:34:12,069 - INFO - Đã dịch xong file 01 - Introduction/001 Introduction_en.srt
+2025-02-03 10:34:12,070 - ERROR - Lỗi chính: cannot access local variable 'temp_output_path' where it is not associated with a value
+2025-02-03 10:54:05,419 - INFO - Folder được chọn: /home/hao/Desktop/test project/01 - Introduction
+2025-02-03 10:54:05,419 - INFO - Đã tải 704 từ khóa IT
+2025-02-03 10:54:05,420 - INFO - Tìm thấy 5 file cần dịch
+2025-02-03 10:54:21,219 - INFO - Đã dịch xong file 001 Introduction_en.srt
+2025-02-03 10:54:39,240 - INFO - Đã dịch xong file 002 Course Outline_en.srt
+2025-02-03 10:54:46,507 - INFO - Đã dịch xong file 003 Course Prerequisites_en.srt
+2025-02-03 10:56:36,793 - INFO - Đã dịch xong file 007 Project Setup_en.srt
+2025-02-03 10:57:22,183 - INFO - Đã dịch xong file 004 System Architecture_en.srt
+2025-02-03 10:57:22,184 - INFO - Hoàn thành quá trình dịch
+2025-02-03 10:57:22,184 - ERROR - Lỗi: name 'rollback_manager' is not defined
